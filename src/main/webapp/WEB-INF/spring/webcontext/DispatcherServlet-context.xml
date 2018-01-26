@@ -11,7 +11,9 @@
 
 	<!-- <mvc:annotation-driven /> -->
 	<context:component-scan base-package="medical.rank" />
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven validator="validator"/>
+	<mvc:annotation-driven conversion-service="conversionService"/>
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />

@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<form action="login" method="post">
 		<h1>Login page</h1>
+		<label for="username">User name:</label>
+		<input type="text" name="username" placeholder="User name" /><br/>
+		<label for="password">Password:</label>
+		<input type="password" name="password" placeholder="Password" /><br/>
+		<input type="submit" value="Login">
+		
+	</form>	
+		
 </body>
 </html>
