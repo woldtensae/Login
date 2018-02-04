@@ -24,5 +24,11 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
         		/WEB-INF/applicationContext.xml
          </param-value>
  	</context-param>
+ 	
+ 	<listener>
+    	<listener-class>
+			org.springframework.web.context.ContextLoaderListener 
+		</listener-class>
+  	</listener>
   
 </web-app>

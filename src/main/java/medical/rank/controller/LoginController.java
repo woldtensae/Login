@@ -23,12 +23,10 @@ public class LoginController {
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String authenticate(@RequestParam("username") String username, @RequestParam("password")
 	    String password, Model model) {
-		loginService.authenticate(username, password);
+		if(loginService.authenticate(username, password))
+			return "Welcome";
 		
 		
-		return null;
-		
-	}
-	
-
+		return "login";
+	}	
 }
