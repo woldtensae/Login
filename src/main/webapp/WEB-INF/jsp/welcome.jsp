@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome
+<h1>Successful login</h1>
 </body>
 </html>

@@ -33,11 +33,12 @@ public class LoginController {
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String authenticate(@RequestParam("username") String username, @RequestParam("password")
 	    String password,@ModelAttribute("user") User user, Model model) {
+		
 		if(loginService.authenticate(username, password))
 			return "welcome";
 		
 		
-		return "login";
+		return "redirect:/login";
 	}
 	@ExceptionHandler
 	@ResponseStatus(HttpStatus.BAD_REQUEST)

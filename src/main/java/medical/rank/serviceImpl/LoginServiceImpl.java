@@ -1,5 +1,6 @@
 package medical.rank.serviceImpl;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +16,10 @@ public class LoginServiceImpl implements LoginService{
 	
 	@Override
 	public boolean authenticate(String username, String password) {
-		User currentUser =userService.getUserByUsername(username);
-		if(currentUser == null)
-			return false;
-		else {
-			if(currentUser.getPassword().equals(password))
+		User user = userService.getUserByUsername(username);
+		
+		if(user != null) {
+			if(user.getPassword().equals(password))
 				return true;
 		}
 		return false;
