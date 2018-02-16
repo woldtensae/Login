@@ -15,14 +15,13 @@ public class LoginServiceImpl implements LoginService{
 	private UserService userService;
 	
 	@Override
-	public boolean authenticate(String username, String password) {
+	public User authenticate(String username, String password) {
 		User user = userService.getUserByUsername(username);
 		
 		if(user != null) {
 			if(user.getPassword().equals(password))
-				return true;
+				return user;
 		}
-		return false;
+		return null;
 	}
-
 }

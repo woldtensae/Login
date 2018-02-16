@@ -1,5 +1,7 @@
 package medical.rank.service;
 
+import medical.rank.domain.User;
+
 public interface LoginService {
-    boolean authenticate(String username, String password);
+    User authenticate(String username, String password);
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import medical.rank.domain.User;
+import medical.rank.domain.UserRole;
 import medical.rank.service.LoginService;
 
 @Controller
@@ -33,11 +34,9 @@ public class LoginController {
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String authenticate(@RequestParam("username") String username, @RequestParam("password")
 	    String password,@ModelAttribute("user") User user, Model model) {
-		
-		if(loginService.authenticate(username, password))
-			return "welcome";
-		
-		
+		if(loginService.authenticate(username, password)!=null) {
+			return "doctor";
+		}
 		return "redirect:/login";
 	}
 	@ExceptionHandler

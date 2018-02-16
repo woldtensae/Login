@@ -3,11 +3,13 @@ package medical.rank.domain;
 
 
 import java.io.Serializable;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
 @Entity 
@@ -27,7 +29,16 @@ public class User implements Serializable{
 	@Transient
 	private String confirmPassword;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn
+	private Role role;
 	
+	public Role getRole() {
+		return role;
+	}
+	public void setRole(Role role) {
+		this.role = role;
+	}
 	public Long getId() {
 		return id;
 	}
